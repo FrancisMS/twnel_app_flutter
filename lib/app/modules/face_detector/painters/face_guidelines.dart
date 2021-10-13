@@ -53,6 +53,6 @@ class FaceGuideLinesPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(FaceGuideLinesPainter oldDelegate) {
-    return true;
+    return false;
   }
 }

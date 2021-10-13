@@ -131,7 +131,7 @@ class FaceDetectorController extends GetxController {
       var xFile = await _controller!.takePicture();
       Get.back(result: xFile.path);
     } catch (e) {
-      debugPrint(e.toString() + ' Error $onPressedTakePicture');
+      debugPrint('Error onPressedTakePicture $e');
     }
   }
 
