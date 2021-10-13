@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:label="Twnel App"
+        android:label="Twnel"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

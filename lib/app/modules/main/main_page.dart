@@ -6,6 +6,7 @@ import 'package:twnel_face_app/app/theme/my_colors.dart';
 import 'package:twnel_face_app/app/theme/my_images.dart';
 import 'package:twnel_face_app/app/theme/my_strings.dart';
 import 'package:twnel_face_app/app/theme/my_styles.dart';
+import 'package:twnel_face_app/app/util/app_helpers.dart';
 
 import 'main_controller.dart';
 
@@ -30,7 +31,10 @@ class MainPage extends StatelessWidget {
               if (_.hasCamera) ItemPrimaryButton(
                 text: MyStrings.registerFace,
                 onTap: _.onTapButton,
-              )
+              ),
+              const SizedBox(height: 24.0,),
+              const Text(AppHelpers.version, style: MyStyles.white10,),
+              const SizedBox(height: 24.0,),
             ],
           )
       )

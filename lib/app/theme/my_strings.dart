@@ -20,6 +20,8 @@ class MyStrings {
   static const String pleaseRegisterYourFace = 'Please, register your face';
   static const String sorryNoCameraFound = 'Sorry, your device does not support Face Recognition';
   static const String registerFace = 'Register Face';
+  static const String faceNotDetected = 'Face not detected';
+  static const String faceDetected = 'Face detected';
 
 
 }

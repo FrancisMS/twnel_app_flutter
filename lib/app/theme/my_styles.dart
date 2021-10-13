@@ -146,4 +146,9 @@ class MyStyles {
     fontSize: 14.0,
   );
 
+  static const TextStyle white10 = TextStyle(
+    color: MyColors.white,
+    fontSize: 10.0,
+  );
+
 }

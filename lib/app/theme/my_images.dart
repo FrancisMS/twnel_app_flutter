@@ -11,6 +11,7 @@ class MyImages {
   static const String control = '$path/control.png';
   static const String home = '$path/home.png';
   static const String warning = '$path/warning.png';
+  static const String frontalFace = '$path/frontal_face.jpg';
 
   /* LOGO */
 

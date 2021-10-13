@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:camera/camera.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -30,7 +32,12 @@ class MainController extends GetxController {
   void _getAvailableCameras() async {
     List<CameraDescription> _cameras = await availableCameras();
 
-    _hasCamera = _cameras.isNotEmpty;
+    for (CameraDescription model in _cameras) {
+      if (model.lensDirection == CameraLensDirection.front) {
+        _hasCamera = true;
+        break;
+      }
+    }
 
     update();
 
@@ -47,8 +54,12 @@ class MainController extends GetxController {
     }
   }
 
-  void _goToView() {
-    Get.toNamed(AppRoutes.faceDetector);
+  void _goToView() async {
+    var results = await Get.toNamed(AppRoutes.faceDetector);
+    if (results != null) {
+      File _file = File(results.toString());
+      Get.toNamed(AppRoutes.pictureTaken, arguments: _file);
+    }
   }
 
 

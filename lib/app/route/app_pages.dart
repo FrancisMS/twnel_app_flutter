@@ -3,6 +3,8 @@ import 'package:twnel_face_app/app/modules/face_detector/face_detector_binding.d
 import 'package:twnel_face_app/app/modules/face_detector/face_detector_page.dart';
 import 'package:twnel_face_app/app/modules/main/main_binding.dart';
 import 'package:twnel_face_app/app/modules/main/main_page.dart';
+import 'package:twnel_face_app/app/modules/picture_taken/picture_taken_binding.dart';
+import 'package:twnel_face_app/app/modules/picture_taken/picture_taken_page.dart';
 import 'package:twnel_face_app/app/modules/splash/splash_binding.dart';
 import 'package:twnel_face_app/app/modules/splash/splash_page.dart';
 
@@ -14,6 +16,7 @@ class AppPages {
     GetPage(name: AppRoutes.splash, page: () => const SplashPage(), binding: SplashBinding(), transition: Transition.fadeIn),
     GetPage(name: AppRoutes.main, page: () => const MainPage(), binding: MainBinding(), transition: Transition.fadeIn),
     GetPage(name: AppRoutes.faceDetector, page: () => const FaceDetectorPage(), binding: MFaceDetectorBinding(), transition: Transition.fadeIn),
+    GetPage(name: AppRoutes.pictureTaken, page: () => const PictureTakenPage(), binding: PictureTakenBinding(), transition: Transition.fadeIn),
   ];
 
 }

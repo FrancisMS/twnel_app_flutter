@@ -6,6 +6,7 @@ import 'package:google_ml_kit/google_ml_kit.dart';
 import 'coordinates_translator.dart';
 
 class FaceDetectorPainter extends CustomPainter {
+
   FaceDetectorPainter(this.faces, this.absoluteImageSize, this.rotation);
 
   final List<Face> faces;
@@ -20,14 +21,25 @@ class FaceDetectorPainter extends CustomPainter {
       ..color = Colors.red;
 
     for (final Face face in faces) {
+      canvas.drawRect(
+        Rect.fromLTRB(
+          translateX(face.boundingBox.left + 60, rotation, size, absoluteImageSize),
+          translateY(face.boundingBox.top - 60, rotation, size, absoluteImageSize),
+          translateX(face.boundingBox.right -120, rotation, size, absoluteImageSize),
+          translateY(
+              face.boundingBox.bottom + 120, rotation, size, absoluteImageSize),
+        ),
+        paint,
+      );
+
       void paintContour(FaceContourType type) {
         final faceContour = face.getContour(type);
         if (faceContour?.positionsList != null) {
           for (Offset point in faceContour!.positionsList) {
             canvas.drawCircle(
                 Offset(
-                  translateX(point.dx, rotation, size, absoluteImageSize),
-                  translateY(point.dy + 50, rotation, size, absoluteImageSize),
+                  translateX(point.dx - 40, rotation, size, absoluteImageSize),
+                  translateY(point.dy + 60, rotation, size, absoluteImageSize),
                 ),
                 1,
                 paint);
@@ -36,10 +48,10 @@ class FaceDetectorPainter extends CustomPainter {
       }
 
       paintContour(FaceContourType.face);
-      paintContour(FaceContourType.leftEyebrowTop);
+/*      paintContour(FaceContourType.leftEyebrowTop);
       paintContour(FaceContourType.leftEyebrowBottom);
       paintContour(FaceContourType.rightEyebrowTop);
-      paintContour(FaceContourType.rightEyebrowBottom);
+      paintContour(FaceContourType.rightEyebrowBottom);*/
       paintContour(FaceContourType.leftEye);
       paintContour(FaceContourType.rightEye);
       paintContour(FaceContourType.upperLipTop);
@@ -50,6 +62,7 @@ class FaceDetectorPainter extends CustomPainter {
       paintContour(FaceContourType.noseBottom);
       paintContour(FaceContourType.leftCheek);
       paintContour(FaceContourType.rightCheek);
+
     }
   }
 
