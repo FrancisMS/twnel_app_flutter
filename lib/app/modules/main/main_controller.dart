@@ -38,7 +38,7 @@ class MainController extends GetxController {
 
   void _askPermission() async {
     Map<Permission, PermissionStatus> _permissions = await [Permission.camera, Permission.storage].request();
-    if (_permissions[0] == PermissionStatus.granted && _permissions[1] == PermissionStatus.granted) {
+    if (_permissions[Permission.camera] == PermissionStatus.granted && _permissions[Permission.storage] == PermissionStatus.granted) {
       _goToView();
     } else {
       ErrorUtil.popUpPermissionError(() {
@@ -48,7 +48,7 @@ class MainController extends GetxController {
   }
 
   void _goToView() {
-    Get.to(AppRoutes.faceDetector);
+    Get.toNamed(AppRoutes.faceDetector);
   }
 
 

@@ -105,6 +105,12 @@ class MyStyles {
     fontSize: 24.0,
   );
 
+  static const TextStyle black18Bold = TextStyle(
+      color: MyColors.black,
+      fontSize: 18.0,
+      fontWeight: FontWeight.bold
+  );
+
   static const TextStyle white18 = TextStyle(
     color: MyColors.white,
     fontSize: 18.0,
@@ -133,6 +139,11 @@ class MyStyles {
   static const TextStyle white16 = TextStyle(
     color: MyColors.white,
     fontSize: 16.0,
+  );
+
+  static const TextStyle grey14 = TextStyle(
+    color: MyColors.grey,
+    fontSize: 14.0,
   );
 
 }

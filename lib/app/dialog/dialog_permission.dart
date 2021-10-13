@@ -24,7 +24,7 @@ class DialogPermission extends StatelessWidget {
           Container(
             decoration: const BoxDecoration(
                 color: MyColors.white,
-                borderRadius: MyStyles.borderRadiusAll5
+                borderRadius: MyStyles.borderRadiusOnlyTop20
             ),
             padding: MyStyles.edgeInsetsAll24,
             child: Column(
@@ -32,22 +32,22 @@ class DialogPermission extends StatelessWidget {
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
-                    Image.asset(MyImages.warning, height: 120.0,),
+                    Image.asset(MyImages.warning, height: 80.0,),
                     const SizedBox(height: 25.0,),
                     const Padding(
                       padding: MyStyles.edgeInsetsHorizontal40,
-                      child: Text(MyStrings.permissionsNotAccepted, style: MyStyles.black24Bold, textAlign: TextAlign.center,),
+                      child: Text(MyStrings.permissionsNotAccepted, style: MyStyles.black18Bold, textAlign: TextAlign.center,),
                     ),
                     const SizedBox(height: 10.0,),
-                    const Text(MyStrings.permissionsNotAcceptedSubtitle, style: MyStyles.grey18, textAlign: TextAlign.center,),
+                    const Text(MyStrings.permissionsNotAcceptedSubtitle, style: MyStyles.grey14, textAlign: TextAlign.center,),
                   ],
                 ),
                 const SizedBox(height: 20.0,),
                 ItemPrimaryButton(
-                  onTap: () {
-                    Get.back();
-                  },
-                  text: MyStrings.accept
+                  onTap: Get.back,
+                  bgColor: MyColors.primary,
+                  style: MyStyles.white16,
+                  text: MyStrings.accept,
                 ),
                 const SizedBox(height: 20.0,),
                 ItemPrimaryButton(

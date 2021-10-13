@@ -46,7 +46,7 @@
             android:value="2" />
 
         <meta-data
-            android:name="com.google.mlkit.vision.DEPENDENCIES"
-            android:value="face " />
+            android:name="com.google.firebase.ml.vision.DEPENDENCIES"
+            android:value="face" />
     </application>
 </manifest>
